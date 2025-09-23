@@ -42,11 +42,11 @@ const createServer = () => {
     }));
 
     // Servir archivos estáticos del frontend React build
-    app.use(express.static(path.join(__dirname, '../../client/dist')));
+    app.use(express.static(path.join(__dirname, '../../../client/dist')));
 
     // Para cualquier ruta no manejada por la API, enviar index.html para que React maneje el routing
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
+        res.sendFile(path.join(__dirname, '../../../client/dist/index.html'));
     });
 
     return server;
