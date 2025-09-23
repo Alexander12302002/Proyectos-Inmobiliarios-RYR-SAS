@@ -7,7 +7,7 @@ import Property from './assets/pages/Property'
 import Propertys from './assets/pages/Propertys'
 import About from './assets/pages/About'
 import Login from './assets/pages/login'
-import Management from './assets/pages/management';
+import Management from './assets/pages/Management';
 
 function App() {
 
