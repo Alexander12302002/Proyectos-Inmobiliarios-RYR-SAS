@@ -31,7 +31,7 @@ const Home = () => {
             <div className='h-[110vh] bg-[#100E2C] p-[20px] flex'>
                 <div className='flex items-center justify-center'>
                     <div className='w-[50vw] flex justify-center'>
-                        <img src='../../../public/tash/Img.png'></img>
+                        <img src='/tash/Img.png'></img>
                     </div>
                     <div className='w-[40vw] flex flex-col p-[10px]'>
                         <div>

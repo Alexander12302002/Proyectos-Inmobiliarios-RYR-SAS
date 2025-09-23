@@ -8,7 +8,7 @@ const Carts = ({ limit = null }) => {
     useEffect(() => {
         const fetchPropiedades = async () => {
             try {
-                const response = await fetch('http://localhost:3000/propiedades/all');
+                const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/propiedades/all`);
                 const data = await response.json();
 
                 const shuffled = shuffleArray(data);

@@ -23,14 +23,14 @@ const Property = () => {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const propRes = await fetch(`http://localhost:3000/propiedades/${realId}`);
+                const propRes = await fetch(`${import.meta.env.VITE_BACKEND_URL}/propiedades/${realId}`);
                 const propData = await propRes.json();
                 setPropiedad(propData);
                 if (propData.imagenes && propData.imagenes.length > 0) {
                     setSelectedImage(propData.imagenes[0]);
                 }
 
-                const infoRes = await fetch(`http://localhost:3000/InfoEspecifica/${realId}`);
+                const infoRes = await fetch(`${import.meta.env.VITE_BACKEND_URL}/InfoEspecifica/${realId}`);
                 const infoData = await infoRes.json();
                 setInfoEspecifica(infoData);
             } catch (error) {
