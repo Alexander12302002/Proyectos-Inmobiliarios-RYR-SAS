@@ -3,20 +3,17 @@ const createServer = require('./infraestructure/server/server');
 
 require('dotenv').config({ path: '../.env' });
 
-
 const startApp = async () => {
-
     let connectToDatabase = new ConnectToDatabase();
-
     await connectToDatabase.open();
 
     const server = createServer();
 
-    server.listen({ port: process.env.EXPRESS_PORT, host: process.env.EXPRESS_HOST }, () => {
+    const PORT = process.env.PORT || 3000; // Usar el puerto de Render o 3000 por defecto
 
-        console.log(`http://${process.env.EXPRESS_HOST}:${process.env.EXPRESS_PORT}`);
+    server.listen(PORT, () => {
+        console.log(`Server running on http://0.0.0.0:${PORT}`);
     });
 };
-
 
 startApp();
