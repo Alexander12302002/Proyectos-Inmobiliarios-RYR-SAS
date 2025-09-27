@@ -69,6 +69,16 @@ const Footer = () => {
                                 Threads
                             </a>
                         </li>
+                        <li>
+                            <a
+                                href="https://aprendiendocongestora.blogspot.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:underline"
+                            >
+                                Blog
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
