@@ -15,7 +15,7 @@ const createServer = () => {
 
     const allowedOrigins = [
         "http://localhost:5173",
-        process.env.FRONTEND_URL  // esta la defines en tu .env para producción
+        process.env.FRONTEND_URL  
     ];
 
     app.use(cors({

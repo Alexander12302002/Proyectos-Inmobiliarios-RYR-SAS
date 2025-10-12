@@ -8,6 +8,9 @@ import Propertys from './assets/pages/Propertys'
 import About from './assets/pages/About'
 import Login from './assets/pages/login'
 import Management from './assets/pages/Management';
+import RegisterPropiedades from './assets/pages/registro-propiedades';
+import ModificarPropiedades from './assets/pages/Modificar-propiedades';
+import RegisterUser from './assets/pages/RegistrarUsuario';
 
 function App() {
 
@@ -20,6 +23,9 @@ function App() {
         <Route path='/Nosotros' element={<About />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/Management' element={<ProtectedRoute><Management /></ProtectedRoute>} />
+        <Route path='/RegisterPropiedades' element={<ProtectedRoute><RegisterPropiedades /></ProtectedRoute>} />
+        <Route path='/modificarpropiedades' element={<ProtectedRoute><ModificarPropiedades /></ProtectedRoute>} />
+        <Route path='/RegisterUser' element={<ProtectedRoute><RegisterUser /></ProtectedRoute>} />
       </Routes>
     </Router>
   )

@@ -12,7 +12,6 @@ const getTokenFromCookie = () => {
 const ProtectedRoute = ({ children }) => {
   const token = getTokenFromCookie();
 
-  console.log(token)
   if (!token) {
     return <Navigate to="/login" replace />;
   }

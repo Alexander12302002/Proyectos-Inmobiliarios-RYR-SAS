@@ -14,6 +14,7 @@ const Carts = ({ limit = null }) => {
                 const shuffled = shuffleArray(data);
                 setPropiedades(shuffled);
             } catch (error) {
+                console.log(`${import.meta.env.VITE_BACKEND_URL}`)
                 console.error('Error al obtener propiedades:', error);
             }
         };

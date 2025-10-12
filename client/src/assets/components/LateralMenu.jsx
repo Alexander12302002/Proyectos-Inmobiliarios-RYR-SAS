@@ -12,7 +12,7 @@ const LateralMenu = () => {
             </div>
             <nav className="flex flex-col mt-4">
                 <NavLink
-                    to="/registro-usuarios"
+                    to="/RegisterUser"
                     className={({ isActive }) =>
                         `${linkStyle} ${isActive ? activeStyle : ''}`
                     }
@@ -20,7 +20,7 @@ const LateralMenu = () => {
                     Registro de Usuarios
                 </NavLink>
                 <NavLink
-                    to="/registro-propiedades"
+                    to="/RegisterPropiedades"
                     className={({ isActive }) =>
                         `${linkStyle} ${isActive ? activeStyle : ''}`
                     }
@@ -28,7 +28,7 @@ const LateralMenu = () => {
                     Registro de Propiedades
                 </NavLink>
                 <NavLink
-                    to="/modificar-propiedades"
+                    to="/modificarpropiedades"
                     className={({ isActive }) =>
                         `${linkStyle} ${isActive ? activeStyle : ''}`
                     }
