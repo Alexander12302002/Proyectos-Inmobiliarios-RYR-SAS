@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // 👈 Importa useNavigate
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [correo, setCorreo] = useState('');
     const [contraseña, setContraseña] = useState('');
     const [error, setError] = useState('');
-    const navigate = useNavigate(); // 👈 Hook para redirigir
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,27 +20,25 @@ const Login = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                document.cookie = `token=${data.token}; path=/`;
+                // Guarda el token en localStorage
+                localStorage.setItem('token', data.token);
                 navigate('/Management');
             } else {
                 const errorData = await response.json();
-                console.error('Error:', errorData.message);
+                setError(errorData.message || 'Error al iniciar sesión');
             }
         } catch (error) {
+            setError('Error al hacer login');
             console.error('Error al hacer login:', error);
         }
     };
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <form
-                onSubmit={handleSubmit}
-                className="bg-white p-6 rounded shadow-md w-full max-w-sm"
-            >
-                {/* Logo */}
+            <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
                 <div className="flex justify-center mb-4">
                     <img
-                        src="/header/logo_gestora-removebg-preview.png" // 👈 Corrige la ruta de la imagen
+                        src="/header/logo_gestora-removebg-preview.png"
                         alt="Logo"
                         className="w-[150px] h-[50px] object-contain"
                     />
@@ -66,9 +64,7 @@ const Login = () => {
                     required
                 />
 
-                {error && (
-                    <div className="text-red-500 text-sm mb-4">{error}</div>
-                )}
+                {error && <div className="text-red-500 text-sm mb-4">{error}</div>}
 
                 <button
                     type="submit"
