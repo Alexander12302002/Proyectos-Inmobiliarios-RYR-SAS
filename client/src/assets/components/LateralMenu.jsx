@@ -36,7 +36,7 @@ const LateralMenu = () => {
                     Modificar Propiedades
                 </NavLink>
                 <NavLink
-                    to="/inicio"
+                    to="/"
                     className={({ isActive }) =>
                         `${linkStyle} ${isActive ? activeStyle : ''}`
                     }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -6,6 +6,14 @@ const Login = () => {
     const [contraseña, setContraseña] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+
+    // Verifica si ya hay token en localStorage para redirigir
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            navigate('/Management');
+        }
+    }, [navigate]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,7 +28,6 @@ const Login = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                // Guarda el token en localStorage
                 localStorage.setItem('token', data.token);
                 navigate('/Management');
             } else {
