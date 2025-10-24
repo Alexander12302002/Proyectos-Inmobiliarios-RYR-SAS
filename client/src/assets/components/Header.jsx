@@ -23,7 +23,7 @@ const Header = () => {
                 <img src="/header/Icon.png" className='w-[20px] h-[20px]' />
                 <a className='text-black' href='/Login'>Inicio</a>
                 <img src="/header/Vector.png" className='w-[20px] h-[20px]' />
-                <h1 className='text-black'>(+57) 310 7636277</h1>
+                <h1 className='text-black'>(+57) 320 8870350 - (+57) 315 6992341</h1>
             </div>
         </div>
     );
